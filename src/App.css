@@ -1,0 +1,11 @@
+:root {
+  --input-width: 100px;
+}
+
+.items {
+  text-align: center;
+}
+
+input {
+  width: var(--input-width);
+}

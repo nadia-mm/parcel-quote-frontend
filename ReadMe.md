@@ -19,28 +19,22 @@ Please follow the instructions in your terminal to use the application :
 - `npm start`
 
 - You can access the backend api :
-
-  - locally:
-
-    - http://localhost:5000/api/prices
-    - http://localhost:5000/api/parcels
-    - http://localhost:5000/api/prices
-
-  - remotely:
-    - https://parcel-quote.herokuapp.com/api/prices
-    - https://parcel-quote.herokuapp.com/api/parcels
-    - https://parcel-quote.herokuapp.com/api/parcels
+  - https://parcel-quote.herokuapp.com/api/prices
+  - https://parcel-quote.herokuapp.com/api/parcels
+  - https://parcel-quote.herokuapp.com/api/parcels
 
 ## Installation
 
-- react: version 17.0.2
-- react-dom: version 17.0.2
-- react-router-dom: version 5.2.0
-- concurrently: 6.2.0
-- cors
-- express : 4.17.1
-- mongoose : 5.13.2
-- nodemon 2.0.9
+    - axios: 0.21.1,
+    - react": 17.0.2,
+    - react-dom: 17.0.2,
+    - react-redux: 7.2.4,
+    - react-router-dom: 5.2.0,
+    - react-scripts: 4.0.3,
+    - redux: 4.1.0,
+    - redux-devtools-extension: 2.13.9,
+    - redux-thunk: 2.3.0,
+    - web-vitals: 1.0.1
 
 ## Resources
 

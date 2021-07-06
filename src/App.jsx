@@ -91,7 +91,6 @@ const App = () => {
           </select>
         </label>
       </div>
-      <div></div>
       <div className="items">
         <input type="button" value="Add Parcel" onClick={addParcel} />
         <ParcelList />

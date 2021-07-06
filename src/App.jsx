@@ -62,7 +62,7 @@ const App = () => {
   return (
     <div className="form">
       <div className="countries">
-        <label htmlFor="departures">
+        <label htmlFor="departures">From:
           <select
             id="departures"
             onChange={(event) => setDeparture(event.target.value)}
@@ -76,7 +76,7 @@ const App = () => {
               ))}
           </select>
         </label>
-        <label htmlFor="destinations">
+        <label htmlFor="destinations">To:
           <select
             id="destinations"
             onChange={(event) => setDestination(event.target.value)}

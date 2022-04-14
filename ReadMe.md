@@ -1,6 +1,6 @@
 # parcel-quote-frontend
 
-User calculates the final price for the delivery of parcels with different weights. To do so, weights must be entered and routes selected in the form. The web application is [here](https://parcel-quote.netlify.app/).
+User calculates the final price for the delivery of parcels with different weights. To do so, weights must be entered and routes selected in the form. The web application is [here](https://parcel-quote.netlify.app/).[THE WEBSITE IS NOT WORKING]
 
 The project is made of two parts:
 

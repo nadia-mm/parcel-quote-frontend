@@ -1,29 +1,22 @@
-import http from "../http-common";
+import http from '../http-common';
 
 const getAll = () => {
-  return http.get("/parcels");
+  http.get('/parcels');
 };
 
-const get = id => {
-  return http.get(`/parcels/${id}`);
-};
+const get = (id) => http.get(`/parcels/${id}`);
 
-const create = data => {
-  return http.post("/parcels/", data);
-};
+const create = (data) => http.post('/parcels/', data);
 
-const update = (id, data) => {
-  return http.put(`/parcels/${id}`, data);
-};
+const update = (id, data) => http.put(`/parcels/${id}`, data);
 
-const remove = id => {
-  return http.delete(`/parcels/${id}`);
-};
+const remove = (id) => http.delete(`/parcels/${id}`);
 
+// eslint-disable-next-line import/prefer-default-export
 export const ParcelService = {
   getAll,
   get,
   create,
   update,
-  remove
+  remove,
 };

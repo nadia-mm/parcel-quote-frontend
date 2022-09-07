@@ -1,10 +1,16 @@
-import { useEffect, useState } from "react";
-import { CountryService, PriceService } from "./services";
-import { ParcelList } from "./components";
-import { useDispatch, useSelector } from "react-redux";
-import { createParcel } from "./actions/parcels";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { CountryService, PriceService } from './services';
+import { ParcelList } from './components';
+import { createParcel } from './actions/parcels';
+import './App.css';
 
+// eslint-disable-next-line react/function-component-definition
 const App = () => {
+  const title = 'Parcel quotation';
+  const description =
+    ' Please choose the route and insert the weights of all parcels';
+
   const [departure, setDeparture] = useState(null);
   const [destination, setDestination] = useState(null);
   const [prices, setPrices] = useState(null);
@@ -44,15 +50,18 @@ const App = () => {
           weight: data.weight,
         });
 
+        // eslint-disable-next-line no-console
         console.log(data);
       })
       .catch((e) => {
+        // eslint-disable-next-line no-console
         console.log(e);
       });
   };
 
   const calculateQuote = async () => {
     const totalWeight = parcels.reduce((acc, { weight }) => {
+      // eslint-disable-next-line no-param-reassign
       acc += Number(weight);
       return acc;
     }, 0);
@@ -60,43 +69,63 @@ const App = () => {
   };
 
   return (
+    // eslint-disable-next-line react/react-in-jsx-scope
     <div className="form">
-      <div className="countries">
-        <label htmlFor="departures">From:
-          <select
-            id="departures"
-            onChange={(event) => setDeparture(event.target.value)}
-          >
-            {countries !== null &&
-              countries !== undefined &&
-              countries.map((country, index) => (
-                <option key={`country-${index}`} value={country}>
-                  {country}
-                </option>
-              ))}
-          </select>
-        </label>
-        <label htmlFor="destinations">To:
-          <select
-            id="destinations"
-            onChange={(event) => setDestination(event.target.value)}
-          >
-            {countries !== null &&
-              countries !== undefined &&
-              countries.map((country, index) => (
-                <option key={`country-${index}`} value={country}>
-                  {country}
-                </option>
-              ))}
-          </select>
-        </label>
-      </div>
-      <div className="items">
-        <input type="button" value="Add Parcel" onClick={addParcel} />
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <div className="wrapper">
+        <div>
+          <label htmlFor="departures">
+            From:
+            <select
+              id="departures"
+              aria-label="departures"
+              onChange={(event) => setDeparture(event.target.value)}>
+              {countries !== null &&
+                countries !== undefined &&
+                countries.map((country, index) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <option key={`country-${index}`} value={country}>
+                    {country}
+                  </option>
+                ))}
+            </select>
+          </label>
+        </div>
+        <div>
+          <label htmlFor="destinations">
+            To:
+            <select
+              id="destinations"
+              onChange={(event) => setDestination(event.target.value)}>
+              {countries !== null &&
+                countries !== undefined &&
+                countries.map((country, index) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <option key={`country-${index}`} value={country}>
+                    {country}
+                  </option>
+                ))}
+            </select>
+          </label>
+        </div>
+        <input
+          className="button"
+          type="button"
+          value="Add Parcel"
+          onClick={addParcel}
+        />
+        <input
+          aria-label="calculate-quotation"
+          className="button"
+          type="submit"
+          value="Calculate Quote"
+          onClick={calculateQuote}
+        />
+
         <ParcelList />
-        <input type="submit" value="Calculate quote" onClick={calculateQuote} />
+        {totalPrice > 0 && <div>{`Total Cost: €${totalPrice}`}</div>}
       </div>
-      {totalPrice>0 && <div>{`Total Cost: €${totalPrice}`}</div>}
     </div>
   );
 };

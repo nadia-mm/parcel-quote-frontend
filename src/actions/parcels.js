@@ -3,9 +3,9 @@ import {
   RETRIEVE_PARCELS,
   UPDATE_PARCEL,
   DELETE_PARCEL,
-} from "./types";
+} from './types';
 
-import { ParcelService } from "../services";
+import { ParcelService } from '../services';
 
 export const createParcel = (weight) => async (dispatch) => {
   try {
@@ -30,6 +30,7 @@ export const retrieveParcels = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
   }
 };
@@ -58,6 +59,7 @@ export const deleteParcel = (id) => async (dispatch) => {
       payload: { id },
     });
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
   }
 };

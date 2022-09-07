@@ -1,6 +1,6 @@
-import http from "../http-common";
-const getAll = () => {
-    return http.get("/prices");
-};
+import http from '../http-common';
 
-export const PriceService ={getAll};
+const getAll = () => http.get('/prices');
+
+// eslint-disable-next-line import/prefer-default-export
+export const PriceService = { getAll };

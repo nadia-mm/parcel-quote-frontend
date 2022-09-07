@@ -3,12 +3,11 @@ import {
   RETRIEVE_PARCELS,
   UPDATE_PARCEL,
   DELETE_PARCEL,
-} from "../actions/types";
-  
-const initialState = [];
-  
-function parcelReducer(parcels = initialState, { type, payload }) {
+} from '../actions/types';
 
+const initialState = [];
+// eslint-disable-next-line default-param-last
+const parcelReducer = (parcels = initialState, { type, payload }) => {
   switch (type) {
     case CREATE_PARCEL:
       return [...parcels, payload];
@@ -23,9 +22,8 @@ function parcelReducer(parcels = initialState, { type, payload }) {
             ...parcel,
             ...payload,
           };
-        } else {
-          return parcel;
         }
+        return parcel;
       });
 
     case DELETE_PARCEL:

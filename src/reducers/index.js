@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import parcels from "./parcels";
+import { combineReducers } from 'redux';
+import parcels from './parcels';
 
 export default combineReducers({
   parcels,

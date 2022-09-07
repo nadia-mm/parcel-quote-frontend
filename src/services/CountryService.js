@@ -1,6 +1,6 @@
-import http from "../http-common";
-const getAll = () => {
-    return http.get("/countries");
-};
+import http from '../http-common';
 
-export const CountryService ={getAll};
+const getAll = () => http.get('/countries');
+
+// eslint-disable-next-line import/prefer-default-export
+export const CountryService = { getAll };

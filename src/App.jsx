@@ -79,13 +79,16 @@ const App = () => {
             From:
             <select
               id="departures"
-              aria-label="departures"
+              data-testid="departure-select"
               onChange={(event) => setDeparture(event.target.value)}>
               {countries !== null &&
                 countries !== undefined &&
                 countries.map((country, index) => (
                   // eslint-disable-next-line react/no-array-index-key
-                  <option key={`country-${index}`} value={country}>
+                  <option
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={`country-${index}`}
+                    value={country}>
                     {country}
                   </option>
                 ))}
@@ -97,12 +100,16 @@ const App = () => {
             To:
             <select
               id="destinations"
+              data-testid="destination-select"
               onChange={(event) => setDestination(event.target.value)}>
               {countries !== null &&
                 countries !== undefined &&
                 countries.map((country, index) => (
                   // eslint-disable-next-line react/no-array-index-key
-                  <option key={`country-${index}`} value={country}>
+                  <option
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={`country-${index}`}
+                    value={country}>
                     {country}
                   </option>
                 ))}
@@ -116,7 +123,6 @@ const App = () => {
           onClick={addParcel}
         />
         <input
-          aria-label="calculate-quotation"
           className="button"
           type="submit"
           value="Calculate Quote"
